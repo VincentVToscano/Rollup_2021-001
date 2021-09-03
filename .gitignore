@@ -77,3 +77,4 @@ build/
 /src/js/*.js
 /src/js/*.js.map
 /src/js/pages/
+/src/css/pages/

@@ -1,4 +1,5 @@
 import TestEmitter from '../emitters/TestEmitter.mjs';
+import '../../../css/src/pages/home.scss';
 
 window.app = {
 	NAME: 'VVT',

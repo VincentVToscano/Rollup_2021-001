@@ -1,0 +1,285 @@
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒ Global styles
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.html {
+	min-height: 100vh;
+	background: $color-bkgd;
+
+	&--blacked-out {
+		height: 100vh;
+		height: -webkit-fill-available;
+		overflow: hidden;
+	}
+}
+
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.body {
+	@include flex-container-display();
+	@include flex-container-flow(nowrap column);
+	height: 100%;
+	min-height: 100vh;
+	// This keeps the hero section in view due to a fixed global nav on mobile and tablet
+	padding: $global-nav-height-mobile 0 0 0;
+
+	// This keeps the hero section in view due to a fixed global nav on desktop
+	@include desktop {
+		padding: $global-nav-height-desktop 0 0 0;
+	}
+
+	&--blacked-out {
+		height: 100vh;
+		height: -webkit-fill-available;
+		overflow: hidden;
+	}
+}
+
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+img {
+	width: 100%;
+	height: auto;
+}
+
+//  mainContent --- Gets applied to <main> element
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.global-main {
+	z-index: 1;
+	min-height: 80vh;
+	color: $color-blue-1;
+	@include desktop {
+		/**
+		Do not touch – we must use important to ensure hiding menu on mobile/tablet doesn't keep it hidden on desktop
+		 */
+		display: block !important;
+	}
+
+	&[disabled="true"] {
+		display: none;
+	}
+}
+
+//  Text selection
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+::-moz-selection {
+	background-color: $color-golden-rod-1;
+	color: $color-blue-1;
+}
+
+::selection {
+	background-color: $color-golden-rod-1;
+	color: $color-blue-1;
+}
+
+//  Define HTML headings – <h1> to <h6>
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.global-heading {
+	&__1 {
+		text-align: center;
+		@extend %typography-h1 !optional;
+	}
+
+	&__2 {
+		text-align: center;
+		@extend %typography-h2 !optional;
+	}
+
+	&__3 {
+		text-align: left;
+		@extend %typography-h3 !optional;
+	}
+
+	&__4 {
+		text-align: left;
+		@extend %typography-h4 !optional;
+	}
+
+	&__5 {
+		text-align: left;
+		@extend %typography-h5 !optional;
+	}
+
+	&__6 {
+		text-align: left;
+		@extend %typography-h6 !optional;
+	}
+}
+
+//  Define <em> (emphasized) & <strong> (important or strongly emphasized) tags
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+em {
+	//font-style: italic;
+	//color: $color-bkgd;
+}
+
+strong {
+	font-weight: bold;
+	color: $color-bkgd;
+}
+
+//  global-footer --- This is the footer at the bottom of each page
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+
+@include animation-keyframes(ani-tm-004) {
+	100% {
+		background-position: -($global-nav-height-desktop * 23);
+	}
+}
+
+@include animation-keyframes(ani-to-the-top-btn) {
+	from { background-position: 0 0;}
+	to { background-position: 0 100%;}
+}
+
+//  Apply to <img> elements to scale proportionately
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.img--scaleProportionately {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+//  Use the global-screen-reader-copy to embed copy within links that are used as hotspots.
+// This allows screen readers to read the links but hides then copy visually.
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.global-screen-reader-copy {
+	position: absolute !important;
+	top: -9999px !important;
+	left: -9999px !important;
+}
+
+//  global-cta-area --- Contains CTAs across the website
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.global-cta-area {
+	width: 100%;
+	min-height: (16px + 34px);
+	@include flex-container-display();
+	align-items: center;
+	grid-column: 1 / -1;
+	justify-items: center;
+	//background-color: #62cd9f;
+
+	@include mobile-only {
+		min-height: (8px * 15);
+	}
+}
+
+//  global-cta --- Refers to the CTA buttons scattered throughout the website
+// These buttons come in several different flavors or styles and are always contained within a div with class global-cta-area
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.global-cta {
+	position: relative;
+	display: inline-flex;
+	width: auto;
+	min-width: 122px;
+	max-width: 100%;
+	min-height: 34px;
+	margin: 0 auto;
+	padding: 0 16px;
+	align-items: center;
+	@include flex-container-flow(nowrap row);
+	justify-content: center;
+	text-align: center;
+	//@include opacity(1);
+	@include borderRadius(3px);
+	@include setPseudoClasses($color-bkgd, $color-blue-1, $color-blue-2, $color-bkgd, .34s);
+	@include transitionMultiple(transform .4s $timingFuncEaseOutQuad, box-shadow .6s $timingFuncEaseOutQuad, min-width 0.6s ease);
+	@extend %add-hardware-acceleration !optional;
+	@extend %typography-body-long-form-bold !optional;
+
+	@include box-shadow(1px,2px,11px,0, rgba(0,0,0,.23));
+
+	&:active,&:hover,&:focus{
+		@include box-shadow(1px,2px,11px,0, #719992FF);
+		min-width: 42%;
+	}
+
+	span {
+		text-transform: uppercase;
+		@include transitionMultiple(transform .44s $timingFuncEaseOutQuad);
+	}
+
+	&__icon{
+		display: inline-block;
+		position: relative;
+		width: 24px;
+		height: 24px;
+		overflow: hidden;
+		margin: 0 0 0 4px;
+		//background: $color-blue-1;
+		@include background-img-sprite("NA", 0, 0, $sprite-sheet-1-width $sprite-sheet-1-height);
+		@include transitionMultiple(transform .4s ease-out);
+	}
+
+	@include mobile-only{
+		min-height: 48px;
+	}
+
+	&--global-projects-feed{
+		@include mobile-only{
+			min-width: unset;
+		}
+	}
+
+	&--ff-down{
+		@include opacity(0);
+		@include transitionMultiple(opacity .34s ease .66s);
+
+		&:active,&:hover,&:focus{
+			@include box-shadow(1px,2px,11px,0, #719992FF);
+			@include translate3d(0, 1px);
+			min-width: 266px;
+
+			> .global-cta__icon{
+				background-position-x: -24px;
+				@include translate3d(0, 3px);
+			}
+		}
+	}
+}
+
+.global-picture {
+	display: block;
+	overflow: hidden;
+	height: auto;
+
+	&--full-bleed {
+		img{
+			display: block;
+			object-fit: cover;
+			min-height: 200px;
+		}
+	}
+}
+
+
+.global-body-blackout {
+	position: absolute;
+	display: none;
+	z-index: 1010;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% + 116px);
+	background-color: rgba(0, 0, 0, .65);
+	cursor: pointer;
+
+	@include mobile-only {
+		height: calc(100% + 56px);
+	}
+
+	@include tablet-only {
+		height: calc(100% + 56px);
+	}
+
+	&--blacked-out {
+		display: block;
+		//height: 100vh;
+		//height: -webkit-fill-available;
+		height: 105%;
+	}
+}

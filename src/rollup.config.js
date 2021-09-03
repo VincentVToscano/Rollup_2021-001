@@ -1,6 +1,7 @@
 // rollup.config.js (building more than one bundle)
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
+import scss from 'rollup-plugin-scss';
 
 const production = process.env.BUILD === 'production';
 // console.log(production, process.env.INCLUDE_DEPS, process.env.BUILD)
@@ -21,6 +22,11 @@ export default [
 				ecma: 2020,
 				module: true,
 				warnings: true,
-			})]
+			}),
+			scss({
+				output: production === true ? 'css/pages/min-home.css' : 'css/pages/home.css',
+				sourceMap: true
+			})
+		]
 	}
 ];

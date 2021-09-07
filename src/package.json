@@ -3,7 +3,7 @@
   "license": "UNLICENSED",
   "private": true,
   "bugs": {
-	"url": "https://github.com/VincentVToscano/Rollup_2021-001/issues"
+    "url": "https://github.com/VincentVToscano/Rollup_2021-001/issues"
   },
   "homepage": "https://github.com/VincentVToscano/Rollup_2021-001#readme",
   "name": "rollup_2021-001",
@@ -11,15 +11,15 @@
   "description": "Vetting Rollup.js to determine how adaptable it is to an array of project requirements.",
   "main": "index.html",
   "repository": {
-	"type": "git",
-	"url": "git+https://github.com/VincentVToscano/Rollup_2021-001.git"
+    "type": "git",
+    "url": "git+https://github.com/VincentVToscano/Rollup_2021-001.git"
   },
   "scripts": {
-	"build": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
-	"build-dev": "rollup -c --environment INCLUDE_DEPS,BUILD:development",
-	"watch": "rollup -c -w --environment INCLUDE_DEPS,BUILD:development",
-	"start": "serve public",
-	"dev": "npm-run-all --parallel start watch"
+    "build": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
+    "build-dev": "rollup -c --environment INCLUDE_DEPS,BUILD:development",
+    "watch": "rollup -c -w --environment INCLUDE_DEPS,BUILD:development",
+    "start": "serve public",
+    "dev": "npm-run-all --parallel start watch"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.0.4",

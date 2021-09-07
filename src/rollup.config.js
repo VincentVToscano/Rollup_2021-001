@@ -17,7 +17,7 @@ export default [
 			sourcemap: true
 		},
 		plugins: [
-			resolve(),                      // Resolve bare module specifiers to relative paths
+			resolve(),                      // Resolve dependencies installed via NPM (stored in the node_modules directory)
 			production && terser({  // Minify JS
 				ecma: 2020,
 				module: true,

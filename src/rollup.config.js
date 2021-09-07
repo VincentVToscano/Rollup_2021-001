@@ -25,7 +25,8 @@ export default [
 			}),
 			scss({
 				output: production === true ? 'css/pages/min-home.css' : 'css/pages/home.css',
-				sourceMap: true
+				sourceMap: true,
+				...(production === true) && {outputStyle: 'compressed'},
 			})
 		]
 	}

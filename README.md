@@ -4,20 +4,20 @@
 Explore Rollup.js
 
 ## Primary Objectives
-1. Use native JavaScript ES Modules (ES2015) over UMD, [CommonJS](https://en.wikipedia.org/wiki/CommonJS) and [AMD](https://github.com/amdjs/amdjs-api/blob/master/AMD.md) based module systems like [RequireJS](https://requirejs.org/) 
-2. Minify of JavaScript
-3. Minify of CSS
-4. Bundle JavaScript
-5. Bundle CSS
-6. Create JavaScript Source Maps
-7. Create CSS Source Maps
-8. Apply Tree-Shaking to JavaScript
+1. ✓ Uses native JavaScript ES Modules (ES2015) over UMD, [CommonJS](https://en.wikipedia.org/wiki/CommonJS) and [AMD](https://github.com/amdjs/amdjs-api/blob/master/AMD.md) based module systems like [RequireJS](https://requirejs.org/) 
+2. ✓ Minifies of JavaScript
+3. ✓ Minifies of CSS
+4. ✓ Bundles JavaScript
+5. ✓ Bundles CSS
+6. ✓ Creates JavaScript Source Maps
+7. ✓ Creates CSS Source Maps
+8. Applies Tree-Shaking to JavaScript
 9. HTML templating (partials into whole pages) fueled by Markdown files (i.e.: static site generation)
 10. Can be deployed and built (primarily or entirely) by GitHub or GitLab
-11. Has a built in web server
+11. Has a built-in web server
 12. Can compile dev and production builds (or be asked to target something specific)
 13. Can be run by CLI with an option to be scripted using Node.js for something complex
-14. Has most of what is desired out-of-the-box [📦](https://fonts.gstatic.com/s/e/notoemoji/13.1.1/1f4e6/72.png =20x) and thus reduces the dependencies needed to compile the project
+14. Has most of what is desired out-of-the-box 📦 and thus reduces the dependencies needed to compile the project
 15. Can incorporate old style or top-level JavaScript libraries that cannot be rewritten to use ES modules (e.g.: jQuery)
 16. Has native file caching (no extra dependencies) to speed up build process
 17. Can be extended per project requirements

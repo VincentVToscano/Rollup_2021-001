@@ -11,7 +11,7 @@ Explore Rollup.js
 5. ✓ Bundles CSS
 6. ✓ Creates JavaScript Source Maps
 7. ✓ Creates CSS Source Maps
-8. Applies Tree-Shaking to JavaScript
+8. ✓ Applies Tree-Shaking methodology to JavaScript
 9. HTML templating (partials into whole pages) fueled by Markdown files (i.e.: static site generation)
 10. Can be deployed and built (primarily or entirely) by GitHub or GitLab
 11. Has a built-in web server

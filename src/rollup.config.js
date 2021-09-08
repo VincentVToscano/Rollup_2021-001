@@ -2,6 +2,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import scss from 'rollup-plugin-scss';
+import commonjs from '@rollup/plugin-commonjs'; // convert CommonJS modules to ES6 => solve for Error: "[name] is not exported by [module]"
 
 const production = process.env.BUILD === 'production';
 // console.log(production, process.env.INCLUDE_DEPS, process.env.BUILD)
@@ -17,7 +18,8 @@ export default [
 			sourcemap: true
 		},
 		plugins: [
-			resolve(),                      // Resolve dependencies installed via NPM (stored in the node_modules directory)
+			resolve(),  // Resolve dependencies installed via NPM (stored in the node_modules directory)
+			commonjs(), // https://github.com/rollup/plugins/tree/master/packages/commonjs#custom-named-exports
 			production && terser({  // Minify JS
 				ecma: 2020,
 				module: true,

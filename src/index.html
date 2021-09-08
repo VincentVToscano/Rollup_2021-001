@@ -3,9 +3,20 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Home</title>
+		<link rel="stylesheet" href="css/pages/min-home.css">
 	</head>
 	<body>
-		Page content
+		<main class="global-main">
+			<section id="hero" class="home__section home__section--hero">
+				Hero content
+				<div class="global-cta-area">
+					<a href="mailto:vincent@vincent.com" class="global-cta global-cta--dark-3 global-cta--lg" aria-label="Send a Message" title="Send a Message" role="link">
+						Send a Message<div id="hero_email_cta_ani" class="lottie-container"></div></a>
+				</div>
+			</section>
+		</main>
+		<aside id="content_aside" class="home_aside">Aside content's background-color updated via JavaScript named import. This is to test Tree-Shaking capabilities.</aside>
+
 		<script src="js/pages/min-home.js"></script>
 	</body>
 </html>

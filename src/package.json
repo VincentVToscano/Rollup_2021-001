@@ -22,7 +22,9 @@
     "dev": "npm-run-all --parallel start watch"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
+    "lottie-web": "^5.7.13",
     "rollup": "^2.56.3",
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-terser": "^7.0.2",

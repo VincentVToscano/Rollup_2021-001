@@ -1,7 +1,7 @@
 import '../../../css/src/pages/home.scss';
 import TestEmitter from '../emitters/TestEmitter.mjs';
 import {id} from '../utilities/elements';
-import Lottie from "lottie-web";
+import Lottie from "lottie-web"; // https://github.com/airbnb/lottie-web
 import Evts from "../utilities/events";
 
 window.app = function () {

@@ -15,12 +15,13 @@
     "url": "git+https://github.com/VincentVToscano/Rollup_2021-001.git"
   },
   "scripts": {
-    "build": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
-	"build-babel": "rollup -c --environment INCLUDE_DEPS,BUILD:production,TRANSFORM",
-    "build-dev": "rollup -c --environment INCLUDE_DEPS,BUILD:development",
-    "watch": "rollup -c -w --environment INCLUDE_DEPS,BUILD:development",
-    "start": "serve public",
-    "dev": "npm-run-all --parallel start watch"
+    "build": "rollup -c --environment INCLUDE_DEPS,BUILD:prod",
+    "build-babel": "rollup -c --environment INCLUDE_DEPS,BUILD:prod,TRANSFORM",
+    "build-dev": "rollup -c --environment INCLUDE_DEPS,BUILD:dev",
+    "watch": "rollup -c -w --environment INCLUDE_DEPS,BUILD:dev",
+    "start": "serve .",
+    "dev-serve": "npm-run-all --parallel start watch",
+    "dev": "npm-run-all --parallel watch"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -29,10 +30,12 @@
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "lottie-web": "^5.7.13",
+    "npm-run-all": "^4.1.5",
     "rollup": "^2.56.3",
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.39.0"
+    "sass": "^1.39.0",
+    "serve": "^12.0.1"
   },
   "keywords": [
     "rollup",

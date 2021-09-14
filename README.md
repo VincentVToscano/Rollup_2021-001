@@ -15,15 +15,15 @@ Explore Rollup.js
 9. ✓ Can employ [Babel](https://babeljs.io/docs/en/babel-preset-env) to transform all ES2015-ES2020 code to be ES5 compatible
 10. HTML templating (partials into whole pages) fueled by Markdown files (i.e.: static site generation)
 11. Can be deployed and built (primarily or entirely) by GitHub or GitLab
-12. Has a built-in web server
-13. Can compile dev and production builds (or be asked to target something specific)
-14. Can be run by CLI with an option to be scripted using Node.js for something complex
+12. ✓ Has a built-in web server or can be adapted to use a dev dependency
+13. ✓ Can compile dev and production builds (or be asked to target something specific)
+14. ✓ Can be run by CLI with an option to be scripted using Node.js for something complex
 15. Has most of what is desired out-of-the-box 📦 and thus reduces the dependencies needed to compile the project
 16. Can incorporate old style or top-level JavaScript libraries that cannot be rewritten to use ES modules (e.g.: jQuery)
-17. Has native file caching (no extra dependencies) to speed up build process
+17. ✓ Has [native file caching](https://github.com/rollup/rollup-watch/blob/80c921eb8e4854622b31c6ba81c88281897f92d1/src/index.js#L89) (no extra dependencies) to speed up build process
 18. Can be extended per project requirements
 19. Can transpile JSX, TypeScript, React, and Vue natively or with plug-in maintained by code runner
-20. Can run processes in parallel
+20. ✓ Can run processes in parallel
 21. Has logging with level support
 22. ✓ Config file accessible
 

@@ -18,9 +18,9 @@
     "build": "rollup -c --environment INCLUDE_DEPS,BUILD:prod",
     "build-babel": "rollup -c --environment INCLUDE_DEPS,BUILD:prod,TRANSFORM",
     "build-dev": "rollup -c --environment INCLUDE_DEPS,BUILD:dev",
-    "watch": "rollup -c -w --environment INCLUDE_DEPS,BUILD:dev",
+    "watch": "rollup -c -w --watch.exclude 'node_modules/**' --environment INCLUDE_DEPS,BUILD:dev --silent",
     "start": "serve .",
-    "dev-serve": "npm-run-all --parallel start watch",
+    "dev-serve": "npm-run-all --parallel watch start",
     "dev": "npm-run-all --parallel watch"
   },
   "devDependencies": {

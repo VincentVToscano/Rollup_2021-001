@@ -6,7 +6,7 @@ import commonjs from '@rollup/plugin-commonjs'; // convert CommonJS modules to E
 import babel from '@rollup/plugin-babel';
 
 const production = process.env.BUILD === 'prod';
-console.log(process.env.TRANSFORM, production, process.env.INCLUDE_DEPS, process.env.BUILD)
+// console.log(process.env.TRANSFORM, production, process.env.INCLUDE_DEPS, process.env.BUILD)
 
 /**
  * @type {import('rollup').RollupOptions}

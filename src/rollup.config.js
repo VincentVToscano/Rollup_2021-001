@@ -4,9 +4,25 @@ import { terser } from 'rollup-plugin-terser'; // https://github.com/terser/ters
 import scss from 'rollup-plugin-scss';
 import commonjs from '@rollup/plugin-commonjs'; // convert CommonJS modules to ES6 => solve for Error: "[name] is not exported by [module]"
 import babel from '@rollup/plugin-babel';
+import serve from 'rollup-plugin-serve'; // https://www.npmjs.com/package/rollup-plugin-serve
+import livereload from 'rollup-plugin-livereload'; // https://github.com/thgh/rollup-plugin-livereload & https://www.npmjs.com/package/livereload - JS Object with options towards bottom
 
-const production = process.env.BUILD === 'prod';
-// console.log(process.env.TRANSFORM, production, process.env.INCLUDE_DEPS, process.env.BUILD)
+const production    = process.env.BUILD === 'prod'; // console.log(process.env.TRANSFORM, production, process.env.INCLUDE_DEPS, process.env.BUILD)
+const pages         = new Set(['home', 'home', 'about']);
+const pages_cleaned = Array.from(pages);
+const max           = pages_cleaned.length;
+for (let i = 0; i < max; i++) {
+	pages_cleaned[i] = {
+		input: `js/src/pages/${pages_cleaned[i]}.js`,
+		output: {
+			file: production === true ? `js/pages/min-${pages_cleaned[i]}.js` : `js/pages/${pages_cleaned[i]}.js`,
+			format: 'es',
+			sourcemap: true
+		},
+		plugins: getPlugins(pages_cleaned[i])
+	};
+}
+// console.log(pages, pages_cleaned);
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -49,6 +65,14 @@ function getPlugins(page) {
 			output: production === true ? `css/pages/min-${page}.css` : `css/pages/${page}.css`,
 			sourceMap: true,
 			...(production === true) && {outputStyle: 'compressed'},
-		})
+		}),
+		process.env.SERVE && serve({
+				port: 10000
+			}
+		),
+		process.env.SERVE && livereload({
+			port: 10001
+			// exts:['png']
+		}),
 	]
 }

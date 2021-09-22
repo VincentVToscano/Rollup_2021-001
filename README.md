@@ -22,7 +22,7 @@ Explore Rollup.js
 16. Can incorporate old style or top-level JavaScript libraries that cannot be rewritten to use ES modules (e.g.: jQuery)
 17. ✓ Has [native file caching](https://github.com/rollup/rollup-watch/blob/80c921eb8e4854622b31c6ba81c88281897f92d1/src/index.js#L89) (no extra dependencies) to speed up build process
 18. Can be extended per project requirements
-19. Can transpile JSX, TypeScript, React, and Vue natively or with plug-in maintained by code runner
+19. Can compile JSX, TypeScript, React, and [Vue](https://github.com/vuejs/rollup-plugin-vue) natively or with plug-in maintained by code runner
 20. ✓ Can run processes in parallel
 21. Has logging with level support
 22. ✓ Config file accessible

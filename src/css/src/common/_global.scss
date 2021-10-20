@@ -176,7 +176,6 @@ strong {
 	display: inline-flex;
 	width: auto;
 	min-width: 122px;
-	max-width: 100%;
 	min-height: 34px;
 	margin: 0 auto;
 	padding: 0 16px;
@@ -184,9 +183,8 @@ strong {
 	@include flex-container-flow(nowrap row);
 	justify-content: center;
 	text-align: center;
-	//@include opacity(1);
 	@include borderRadius(3px);
-	@include setPseudoClasses($color-bkgd, $color-blue-1, $color-blue-2, $color-bkgd, .34s);
+	@include setPseudoClasses($color-gray-2, $color-bkgd, $color-gray-1, $color-gray-2, .34s);
 	@include transitionMultiple(transform .4s $timingFuncEaseOutQuad, box-shadow .6s $timingFuncEaseOutQuad, min-width 0.6s ease);
 	@extend %add-hardware-acceleration !optional;
 	@extend %typography-body-long-form-bold !optional;
@@ -195,7 +193,6 @@ strong {
 
 	&:active,&:hover,&:focus{
 		@include box-shadow(1px,2px,11px,0, #719992FF);
-		min-width: 42%;
 	}
 
 	span {
@@ -203,14 +200,13 @@ strong {
 		@include transitionMultiple(transform .44s $timingFuncEaseOutQuad);
 	}
 
-	&__icon{
+	&__icon {
 		display: inline-block;
 		position: relative;
 		width: 24px;
 		height: 24px;
 		overflow: hidden;
 		margin: 0 0 0 4px;
-		//background: $color-blue-1;
 		@include background-img-sprite("NA", 0, 0, $sprite-sheet-1-width $sprite-sheet-1-height);
 		@include transitionMultiple(transform .4s ease-out);
 	}
@@ -219,25 +215,11 @@ strong {
 		min-height: 48px;
 	}
 
-	&--global-projects-feed{
-		@include mobile-only{
-			min-width: unset;
-		}
-	}
-
-	&--ff-down{
-		@include opacity(0);
-		@include transitionMultiple(opacity .34s ease .66s);
-
-		&:active,&:hover,&:focus{
-			@include box-shadow(1px,2px,11px,0, #719992FF);
-			@include translate3d(0, 1px);
-			min-width: 266px;
-
-			> .global-cta__icon{
-				background-position-x: -24px;
-				@include translate3d(0, 3px);
-			}
+	&--dark-3 {
+		padding: 10px;
+		min-width: 20%;
+		span {
+			margin: 0 4px 0 0;
 		}
 	}
 }

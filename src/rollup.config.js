@@ -7,7 +7,7 @@ import babel from '@rollup/plugin-babel';
 import serve from 'rollup-plugin-serve'; // https://www.npmjs.com/package/rollup-plugin-serve
 import livereload from 'rollup-plugin-livereload'; // https://github.com/thgh/rollup-plugin-livereload & https://www.npmjs.com/package/livereload - JS Object with options towards bottom
 
-const production    = process.env.BUILD === 'prod'; // console.log(process.env.TRANSFORM, production, process.env.INCLUDE_DEPS, process.env.BUILD)
+const production    = process.env.BUILD === 'production'; // console.log(process.env.TRANSFORM, production, process.env.INCLUDE_DEPS, process.env.BUILD)
 const pages         = new Set(['home', 'home', 'about']);
 const pages_cleaned = Array.from(pages);
 const max           = pages_cleaned.length;
@@ -67,11 +67,11 @@ function getPlugins(page) {
 			...(production === true) && {outputStyle: 'compressed'},
 		}),
 		process.env.SERVE && serve({
-				port: 10000
+				port: 1000
 			}
 		),
 		process.env.SERVE && livereload({
-			port: 10001
+			port: 1001
 			// exts:['png']
 		}),
 	]

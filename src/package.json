@@ -15,9 +15,9 @@
     "url": "git+https://github.com/VincentVToscano/Rollup_2021-001.git"
   },
   "scripts": {
-    "build": "rollup -c --environment INCLUDE_DEPS,BUILD:prod",
-    "build-babel": "rollup -c --environment INCLUDE_DEPS,BUILD:prod,TRANSFORM",
+    "build-production": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
     "build-dev": "rollup -c --environment INCLUDE_DEPS,BUILD:dev",
+    "build-babel": "rollup -c --environment INCLUDE_DEPS,BUILD:production,TRANSFORM",
     "watch": "rollup -c -w --watch.exclude 'node_modules/**' --environment INCLUDE_DEPS,BUILD:dev --silent",
     "watch-with-serve": "rollup -c -w --watch.exclude 'node_modules/**' --environment INCLUDE_DEPS,BUILD:dev,SERVE --silent",
     "serve-dev": "serve .",
@@ -25,20 +25,20 @@
     "dev": "npm-run-all --parallel watch"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^20.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.4",
-    "lottie-web": "^5.7.13",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.0.2",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "lottie-web": "^5.9.1",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.56.3",
+    "rollup": "^2.70.1",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.39.0",
-    "serve": "^12.0.1"
+    "sass": "^1.49.9",
+    "serve": "^13.0.2"
   },
   "keywords": [
     "rollup",

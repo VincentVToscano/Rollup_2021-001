@@ -19,7 +19,7 @@
     "build-dev": "rollup -c --environment INCLUDE_DEPS,BUILD:dev",
     "build-babel": "rollup -c --environment INCLUDE_DEPS,BUILD:production,TRANSFORM",
     "watch": "rollup -c -w --watch.exclude 'node_modules/**' --environment INCLUDE_DEPS,BUILD:dev --silent",
-    "watch-with-serve": "rollup -c -w --watch.exclude 'node_modules/**' --environment INCLUDE_DEPS,BUILD:dev,SERVE --silent",
+    "watch-with-serve": "rollup -c -w --watch.exclude 'node_modules/**' --environment INCLUDE_DEPS,BUILD:dev,SERVE,TRANSFORM --silent",
     "serve-dev": "serve .",
     "dev-serve": "npm-run-all --parallel watch-with-serve",
     "dev": "npm-run-all --parallel watch"

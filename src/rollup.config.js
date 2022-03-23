@@ -62,9 +62,17 @@ function getPlugins(page) {
 			babelrc: true
 		}),
 		scss({
-			output: production === true ? `css/pages/min-${page}.css` : `css/pages/${page}.css`,
 			sourceMap: true,
+			watch: ['css/src'],
 			...(production === true) && {outputStyle: 'compressed'},
+			output: production === true ? `css/pages/min-${page}.css` : `css/pages/${page}.css`,
+			// Callback that will be called ongenerate with two arguments:
+			// - styles: the contents of all style tags combined: 'body { color: green }'
+			// - styleNodes: an array of style objects: { filename: 'body { ... }' }
+			/*output: function (styles, styleNodes) {
+				console.log(styles, styleNodes);
+				// writeFileSync('bundle.css', styles);
+			},*/
 		}),
 		process.env.SERVE && serve({
 				port: 1000
@@ -73,6 +81,6 @@ function getPlugins(page) {
 		process.env.SERVE && livereload({
 			port: 1001
 			// exts:['png']
-		}),
+		})
 	]
 }

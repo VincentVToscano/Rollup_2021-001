@@ -21,7 +21,7 @@
 	&__section {
 		@extend %global-main-section !optional;
 		@extend %apply-padding-for-left-and-right-sides !optional;
-		color: orange;
+		color: $color-black-1;
 
 		&--hero {
 			z-index: 3;

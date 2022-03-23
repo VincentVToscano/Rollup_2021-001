@@ -27,17 +27,7 @@ for (let i = 0; i < max; i++) {
 /**
  * @type {import('rollup').RollupOptions}
  */
-export default [
-	{
-		input: 'js/src/pages/home.js',
-		output: {
-			file: production === true ? 'js/pages/min-home.js' : 'js/pages/home.js',
-			format: 'es',
-			sourcemap: true
-		},
-		plugins: getPlugins('home')
-	}
-];
+export default pages_cleaned;
 
 /**
  * getPlugins --- Return global plugins Array and customize for each bundle
@@ -75,11 +65,15 @@ function getPlugins(page) {
 			},*/
 		}),
 		process.env.SERVE && serve({
-				port: 1000
+				port: 1000,
+				open: true,
+				verbose: true,
+				contentBase: ['', 'build'],
+				historyApiFallback: true,
 			}
 		),
 		process.env.SERVE && livereload({
-			port: 1001
+			port: 1001,
 			// exts:['png']
 		})
 	]

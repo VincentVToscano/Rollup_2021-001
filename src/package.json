@@ -21,7 +21,7 @@
     "watch": "rollup -c -w --watch.exclude 'node_modules/**' --environment INCLUDE_DEPS,BUILD:dev --silent",
     "watch-with-serve": "rollup -c -w --watch.exclude 'node_modules/**' --environment INCLUDE_DEPS,BUILD:dev,SERVE,TRANSFORM --silent",
     "serve-dev": "serve .",
-    "dev-serve": "npm-run-all --parallel watch-with-serve",
+    "watch-and-serve-dev": "npm-run-all --parallel watch-with-serve",
     "dev": "npm-run-all --parallel watch"
   },
   "devDependencies": {

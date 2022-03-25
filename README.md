@@ -59,7 +59,7 @@ npm run build-dev
 
 ### Build & serve the website locally on the preview server with environment:
 ```
-TBD
+npm run watch-and-serve-dev
 ```
 
 ---
@@ -69,7 +69,7 @@ Continuous integration and continuous delivery (CI/CD) pipeline has been establi
 
 The URLs are ready.
 ### On ***development*** branch
-[Development](http://127.0.0.1:4000)
+[Development](http://localhost:1000/)
 
 ### On ***staging*** branch
 TBD
